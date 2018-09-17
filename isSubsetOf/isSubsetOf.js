@@ -17,11 +17,22 @@
  * subset.
 */
 
-
 /*
  * Extra credit: Make the method work for arrays that contain objects and/or arrays as elements.
 */
 
-Array.prototype.isSubsetOf = function (arr) {
-	// your code here
-}
+Array.prototype.isSubsetOf = function(arr) {
+  // your code here
+  var counter = 0;
+  for (var i = 0; i < this.length; i++) {
+    for (var j = 0; j < arr.length; j++) {
+      if (this[i] === arr[j]) {
+        counter++;
+      }
+    }
+  }
+  if (counter === this.length) {
+    return true;
+  }
+  return false;
+};
