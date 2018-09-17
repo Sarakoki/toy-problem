@@ -20,5 +20,4 @@ NOTE: DO NOT use JavaScript’s built-in sorting function (Array.prototype.sort)
 */
 function quickSort(arr) {
   //your code here
-  
 }

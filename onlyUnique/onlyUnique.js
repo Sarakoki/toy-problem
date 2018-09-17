@@ -17,7 +17,20 @@ str:                  |
 "iiii"                |	""
 ------------------------------------
 */
-
-function onlyUnique (str) {
-   // your code is here
-}	
+function onlyUnique(str) {
+  var string = "";
+  var obj = {};
+  for (var i = 0; i < str.length; i++) {
+    if (obj[str[i]] === undefined) {
+      obj[str[i]] = 0;
+    } else {
+      obj[str[i]] += 1;
+    }
+  }
+  for (var key in obj) {
+    if (obj[key] === 0) {
+      string += key;
+    }
+  }
+  return string;
+}

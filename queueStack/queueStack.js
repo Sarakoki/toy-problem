@@ -1,38 +1,36 @@
-//Write a stack. Once you’re done, 
-//implement a queue using two stacks to create FIFO behavior. 
+//Write a stack. Once you’re done,
+//implement a queue using two stacks to create FIFO behavior.
 //The queue should not have any storage separate from its stacks.
 
-
 var Stack = function() {
-	var storage = [];
+  var storage = [];
 
-	this.push = function(){
+  this.push = function(a) {
+    return storage.push(a);
+  };
 
-	};
+  this.pop = function() {
+    return storage.pop();
+  };
 
-	this.pop = function(){
-
-	};
-
-	this.size = function(){
-
-	};
+  this.size = function() {
+    return storage.length;
+  };
 };
 
 var Queue = function() {
+  var inbox = new Stack();
+  var outbox = new Stack();
 
-	var inbox = new Stack();
-	var outbox = new Stack();
+  this.enqueue = function(a) {
+    inbox.push(a);
+  };
 
-	this.enqueue = function(){
+  this.dequeue = function() {
+    return inbox.shift();
+  };
 
-	};
-
-	this.dequeue = function(){
-		
-	};
-
-	this.size = function(){
-
-	};
+  this.size = function() {
+    return inbox.size();
+  };
 };

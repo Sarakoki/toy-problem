@@ -10,7 +10,18 @@
  * console.log(index); // 4
  */
 
-var binarySearch = function (array, target) {
-  
+var binarySearch = function(array, target) {
+  var min = 0;
+  var max = array.length - 1;
+  while (min <= max) {
+    var center = Math.floor((max + min) / 2);
+    if (array[center] === target) {
+      return center;
+    } else if (array[center] > target) {
+      max = center - 1;
+    } else {
+      min = center + 1;
+    }
+  }
+  return -1;
 };
-

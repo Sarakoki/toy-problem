@@ -23,7 +23,18 @@ DO NOT use a recursive solution to this problem. Your solution must run in linea
 
 */
 
-
-nthFibonacci = function(n) {  
- // your code here
+nthFibonacci = function(n) {
+  // your code here
+  if (n === 1) {
+    return 1;
+  }
+  if (n === 0) {
+    return 0;
+  } else {
+    var fib = [0, 1];
+    for (var i = 2; i <= n; i++) {
+      fib.push(fib[i - 1] + fib[i - 2]);
+    }
+  }
+  return fib[n];
 };
