@@ -20,6 +20,19 @@ string:
 -------------------------------------------------
 */
 
-function firstNonRepeatedCharacter (string) {
-   // write your code here
+function firstNonRepeatedCharacter(string) {
+  // write your code here
+  var obj = {};
+  for (var i = 0; i < string.length; i++) {
+    if (!obj[string[i]]) {
+      obj[string[i]] = 0;
+    }
+    obj[string[i]] += 1;
+  }
+  for (var key in obj) {
+    if (obj[key] === 1) {
+      return key;
+    }
+  }
+  return "sorry";
 }
