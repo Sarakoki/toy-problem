@@ -15,9 +15,19 @@ arrays:
 
 */
 
-function flatten (arrays) {
-	// write your code here 
+function flatten(arrays) {
+  // write your code here
+  var result = [];
+  var elem = arrays;
+  function recurse(elem) {
+    for (var i = 0; i < elem.length; i++) {
+      if (Array.isArray(elem[i])) {
+        recurse(elem[i]);
+      } else {
+        result.push(elem[i]);
+      }
+    }
+  }
+  recurse(arrays);
+  return result;
 }
-
-
-
